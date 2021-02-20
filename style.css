@@ -1,6 +1,7 @@
 .courses {
 	display: flex;
 	margin-bottom: 15px;
+    
 }
 
 .courses > *:first-child {
@@ -14,10 +15,9 @@
 .courses > * {
 	margin-right: 5px;
 	margin-left: 5px;
+    
 }
 
-.course-item {
-}
 .course-item-title {
 	font-weight: 700;
 	font-size: 18px;
@@ -53,3 +53,8 @@
 .hidden {
 	display: none;
 }
+span{
+    color: rgb(12, 211, 145);
+}
+
+
