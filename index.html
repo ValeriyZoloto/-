@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<link rel="stylesheet" href="style.css" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+			crossorigin="anonymous"
+		/>
+
+		<title>Конвертер валют на JavaScript</title>
+
+		<style>
+			.footer__link {
+				margin: 0 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container pt-5 pb-5">
+			<div class="row justify-content-center">
+				<div class="col-6">
+					<!-- Content -->
+					<div class="card p-3">
+						<form>
+							<h1 class="h2 mb-4">Конвертер валют</h1>
+
+							<div class="row mb-1">
+								<div class="col">
+									<label for="name">Отдаю:</label>
+									<select
+										disabled
+										class="form-control"
+										id="exampleFormControlSelect1"
+									>
+										<option value="RUB" selected>RUB — Рубли</option>
+									</select>
+								</div>
+								<div class="col">
+									<label for="name">Получаю:</label>
+									<select
+										id="select"
+										class="form-control"
+										id="exampleFormControlSelect1"
+									>
+										<option value="USD">USD — Доллар США</option>
+										<option value="EUR">EUR — Евро</option>
+										<option value="GBP">GPB — Фунт стерлингов</option>
+
+										<option value="JPY">
+											JPY — 100 Японских иен
+										</option>
+										<option value="AUD">
+											AUD — Австралийский доллар
+										</option>
+										<option value="AZN">
+											AZN — Азербайджанский манат
+										</option>
+
+										<option value="AMD">
+											AMD — 100 Армянских драмов
+										</option>
+										<option value="BYN">
+											BYN — Белорусский рубль
+										</option>
+										<option value="BRL">
+											BRL — Бразильский реал
+										</option>
+
+										<option value="HUF">
+											HUF — 100 Венгерских форинтов
+										</option>
+										<option value="HKD">
+											HKD — 10 Гонконгских долларов
+										</option>
+										<option value="BGN">BGN — Болгарский лев</option>
+
+										<option value="DKK">DKK Датская крона</option>
+										<option value="INR">
+											INR — 10 Индийских рупий
+										</option>
+										<option value="KZT">
+											KZT 100 Казахстанских тенге
+										</option>
+
+										<option value="CAD">CAD Канадский доллар</option>
+										<option value="KGS">
+											KGS 100 Киргизских сомов
+										</option>
+										<option value="CNY">CNY Китайский юань</option>
+
+										<option value="MDL">
+											MDL 10 Молдавских леев
+										</option>
+										<option value="NOK">
+											NOK 10 Норвежских крон
+										</option>
+										<option value="PLN">PLN Польский злотый</option>
+
+										<option value="RON">RON Румынский лей</option>
+										<option value="XDR">
+											XDR СДР (специальные права заимствования)
+										</option>
+										<option value="SGD">
+											SGD Сингапурский доллар
+										</option>
+
+										<option value="TJS">
+											TJS 10 Таджикских сомони
+										</option>
+										<option value="TRY">TRY Турецкая лира</option>
+										<option value="TMT">
+											TMT Новый туркменский манат
+										</option>
+
+										<option value="UZS">
+											UZS 10000 Узбекских сумов
+										</option>
+										<option value="CZK">CZK 10 Чешских крон</option>
+										<option value="UAH">
+											UAH 10 Украинских гривен
+										</option>
+
+										<option value="SEK">SEK 10 Шведских крон</option>
+										<option value="CHF">CHF Швейцарский франк</option>
+										<option value="ZAR">
+											ZAR 10 Южноафриканских рэндов
+										</option>
+										<option value="KRW">
+											KRW 1000 Вон Республики Корея
+										</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col">
+									<input
+										id="input"
+										type="number"
+										class="form-control"
+										id="name"
+										autofocus
+									/>
+								</div>
+								<div class="col">
+									<input
+										id="result"
+										type="number"
+										class="form-control"
+										id="name"
+									/>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">Доллар США USD</div>
+									<div class="course-item-value" data-value="USD">
+										--.--
+									</div>
+									<div id="urroyUpUSD" class="urroyUp">↟</div>
+									<div id="urroyDownUSD" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">ЕврEUR</div>
+									<div class="course-item-value" data-value="EUR">
+										--.--
+									</div>
+									<div id="urroyUpEUR" class="urroyUp">↟</div>
+									<div id="urroyDownEUR" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Британский Фунт GPB
+									</div>
+									<div class="course-item-value" data-value="GBP">
+										--.--
+									</div>
+									<div id="urroyUpGBP" class="urroyUp">↟</div>
+									<div id="urroyDownGBP" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Австралийский доллар AUD
+									</div>
+									<div class="course-item-value" data-value="AUD">
+										--.--
+									</div>
+									<div id="urroyUpAUD" class="urroyUp">↟</div>
+									<div id="urroyDownAUD" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Азербайджанский манат AZN
+									</div>
+									<div class="course-item-value" data-value="AZN">
+										--.--
+									</div>
+									<div id="urroyUpAZN" class="urroyUp">↟</div>
+									<div id="urroyDownAZN" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										100 Армянских драмов AMD
+									</div>
+									<div class="course-item-value" data-value="AMD">
+										--.--
+									</div>
+									<div id="urroyUpAMD" class="urroyUp">↟</div>
+									<div id="urroyDownAMD" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										100 Японских иен JPY
+									</div>
+									<div class="course-item-value" data-value="JPY">
+										--.--
+									</div>
+									<div id="urroyUpJPY" class="urroyUp">↟</div>
+									<div id="urroyDownJPY" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Белорусский рубль BYN
+									</div>
+									<div class="course-item-value" data-value="BYN">
+										--.--
+									</div>
+									<div id="urroyUpBYN" class="urroyUp">↟</div>
+									<div id="urroyDownBYN" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Болгарский лев BGN
+									</div>
+									<div class="course-item-value" data-value="BGN">
+										--.--
+									</div>
+									<div id="urroyUpBGN" class="urroyUp">↟</div>
+									<div id="urroyDownBGN" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Бразильский реал BRL
+									</div>
+									<div class="course-item-value" data-value="BRL">
+										--.--
+									</div>
+									<div id="urroyUpBRL" class="urroyUp">↟</div>
+									<div id="urroyDownBRL" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										100 Венгерских форинтов HUF
+									</div>
+									<div class="course-item-value" data-value="HUF">
+										--.--
+									</div>
+									<div id="urroyUpHUF" class="urroyUp">↟</div>
+									<div id="urroyDownHUF" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Гонконгских долларов HKD
+									</div>
+									<div class="course-item-value" data-value="HKD">
+										--.--
+									</div>
+									<div id="urroyUpHKD" class="urroyUp">↟</div>
+									<div id="urroyDownHKD" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">Датская крона DKK</div>
+									<div class="course-item-value" data-value="DKK">
+										--.--
+									</div>
+									<div id="urroyUpDKK" class="urroyUp">↟</div>
+									<div id="urroyDownDKK" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Индийских рупий INR
+									</div>
+									<div class="course-item-value" data-value="INR">
+										--.--
+									</div>
+									<div id="urroyUpINR" class="urroyUp">↟</div>
+									<div id="urroyDownINR" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										100 Казахстанских тенге KZT
+									</div>
+									<div class="course-item-value" data-value="KZT">
+										--.--
+									</div>
+                                    <div id="urroyUpKZT" class="urroyUp">↟</div>
+									<div id="urroyDownKZT" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Канадский доллар CAD
+									</div>
+									<div class="course-item-value" data-value="CAD">
+										--.--
+									</div>
+                                    <div id="urroyUpCAD" class="urroyUp">↟</div>
+									<div id="urroyDownCAD" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										100 Киргизских сомов KGS
+									</div>
+									<div class="course-item-value" data-value="KGS">
+										--.--
+									</div>
+                                    <div id="urroyUpKGS" class="urroyUp">↟</div>
+									<div id="urroyDownKGS" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Китайский юань CNY
+									</div>
+									<div class="course-item-value" data-value="CNY">
+										--.--
+									</div>
+                                    <div id="urroyUpCNY" class="urroyUp">↟</div>
+									<div id="urroyDownCNY" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Молдавских леев MDL
+									</div>
+									<div class="course-item-value" data-value="MDL">
+										--.--
+									</div>
+                                    <div id="urroyUpMDL" class="urroyUp">↟</div>
+									<div id="urroyDownMDL" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Норвежских крон NOK
+									</div>
+									<div class="course-item-value" data-value="NOK">
+										--.--
+									</div>
+                                    <div id="urroyUpNOK" class="urroyUp">↟</div>
+									<div id="urroyDownNOK" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Польский злотый PLN
+									</div>
+									<div class="course-item-value" data-value="PLN">
+										--.--
+									</div>
+                                    <div id="urroyUpPLN" class="urroyUp">↟</div>
+									<div id="urroyDownPLN" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">Румынский лей RON</div>
+									<div class="course-item-value" data-value="RON">
+										--.--
+									</div>
+                                    <div id="urroyUpRON" class="urroyUp">↟</div>
+									<div id="urroyDownRON" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										СДР (специальные права заимствования) XDR
+									</div>
+									<div class="course-item-value" data-value="XDR">
+										--.--
+									</div>
+                                    <div id="urroyUpXDR" class="urroyUp">↟</div>
+									<div id="urroyDownXDR" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Сингапурский доллар SGD
+									</div>
+									<div class="course-item-value" data-value="SGD">
+										--.--
+									</div>
+                                    <div id="urroyUpSGD" class="urroyUp">↟</div>
+									<div id="urroyDownSGD" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Таджикских сомони TJS
+									</div>
+									<div class="course-item-value" data-value="TJS">
+										--.--
+									</div>
+                                    <div id="urroyUpTJS" class="urroyUp">↟</div>
+									<div id="urroyDownTJS" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">Турецкая лира TRY</div>
+									<div class="course-item-value" data-value="TRY">
+										--.--
+									</div>
+                                    <div id="urroyUpTRY" class="urroyUp">↟</div>
+									<div id="urroyDownTRY" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Новый туркменский манат TMT
+									</div>
+									<div class="course-item-value" data-value="TMT">
+										--.--
+									</div>
+                                    <div id="urroyUpTMT" class="urroyUp">↟</div>
+									<div id="urroyDownTMT" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10000 Узбекских сумов UZS
+									</div>
+									<div class="course-item-value" data-value="UZS">
+										--.--
+									</div>
+                                    <div id="urroyUpUZS" class="urroyUp">↟</div>
+									<div id="urroyDownUZS" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Чешских крон CZK
+									</div>
+									<div class="course-item-value" data-value="CZK">
+										--.--
+									</div>
+                                    <div id="urroyUpCZK" class="urroyUp">↟</div>
+									<div id="urroyDownCZK" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Украинских гривен UAH
+									</div>
+									<div class="course-item-value" data-value="UAH">
+										--.--
+									</div>
+                                    <div id="urroyUpUAH" class="urroyUp">↟</div>
+									<div id="urroyDownUAH" class="urroyDown">↡</div>
+								</div>
+							</div>
+
+							<div class="courses">
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Шведских крон SEK
+									</div>
+									<div class="course-item-value" data-value="SEK">
+										--.--
+									</div>
+                                    <div id="urroyUpSEK" class="urroyUp">↟</div>
+									<div id="urroyDownSEK" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										Швейцарский франк CHF
+									</div>
+									<div class="course-item-value" data-value="CHF">
+										--.--
+									</div>
+                                    <div id="urroyUpCHF" class="urroyUp">↟</div>
+									<div id="urroyDownCHF" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										10 Южноафриканских рэндов ZAR
+									</div>
+									<div class="course-item-value" data-value="ZAR">
+										--.--
+									</div>
+                                    <div id="urroyUpZAR" class="urroyUp">↟</div>
+									<div id="urroyDownZAR" class="urroyDown">↡</div>
+								</div>
+								<div class="course-item card card-body">
+									<div class="course-item-title">
+										1000 Вон Республики Корея KRW
+									</div>
+									<div class="course-item-value" data-value="KRW">
+										--.--
+									</div>
+                                    <div id="urroyUpKRW" class="urroyUp">↟</div>
+									<div id="urroyDownKRW" class="urroyDown">↡</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- // Content -->
+				</div>
+				<!-- // col-6 -->
+			</div>
+			<!-- // row -->
+		</div>
+		<!-- // container -->
+
+		<footer class="footer d-flex justify-content-center">
+			<a class="footer__link" target="_blank" href="https://webcademy.ru/jscourse"
+				>Курс по JavaScript от ВебКадеми</a
+			>
+		</footer>
+
+		<script src="main.js"></script>
+	</body>
+</html>
