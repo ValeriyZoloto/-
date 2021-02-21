@@ -1,5 +1,5 @@
 #body {
-	background-image: url("./img/milky-way-5295160_1280.jpg");
+	background-image: url("./img/fon_stena_poverhnost_tekstura_69472_1920x1080.jpg");
 }
 #h1 {
 	text-align: center;
@@ -11,6 +11,7 @@
 #label1 {
 	font-size: 25px;
 	font-weight: 700;
+    color: rgb(248, 242, 242);
 }
 
 #pt-5 {
@@ -19,7 +20,7 @@
 }
 #main {
 	background-color: chartreuse;
-	background-image: url("./img/beautiful-clouds-on-blue-sky-background_34251-117.jpg");
+	background-image: url("./img/poverhnost_svetlyy_serebristyy_fon_18396_1920x1080.jpg");
     border: solid 4px;
     border-radius: 20px;
 }
@@ -119,10 +120,26 @@ span {
 #ZAR,
 #KRW {
 	background-color: rgb(240, 239, 196);
+    /* background-image: url("./img/bumaga_tekstura_kletki_svetlyy_55327_1920x1080.jpg"); */
 	border: solid 4px;
 	color: rgb(18, 22, 15);
 	border-radius: 8px;
+    font-weight: 600;
 }
 #main {
 	margin: auto;
+}
+
+#exampleFormControlSelect{
+    background-color:cornflowerblue;
+    color: rgb(245, 241, 241);
+    font-weight: 500;
+}
+#select{
+    background-color:cornflowerblue;
+    color: rgb(245, 241, 241);
+    font-weight: 500;
+}
+.justify-content-center{
+    width: 500px;
 }
