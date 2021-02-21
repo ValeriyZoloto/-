@@ -1,7 +1,31 @@
+#body {
+	background-image: url("./img/milky-way-5295160_1280.jpg");
+}
+#h1 {
+	text-align: center;
+	font-weight: 700;
+	font-size: 50px;
+	color: rgb(233, 10, 66);
+}
+#label,
+#label1 {
+	font-size: 25px;
+	font-weight: 700;
+}
+
+#pt-5 {
+    width: 1200px;
+	padding-left: 0px;
+}
+#main {
+	background-color: chartreuse;
+	background-image: url("./img/beautiful-clouds-on-blue-sky-background_34251-117.jpg");
+    border: solid 4px;
+    border-radius: 20px;
+}
 .courses {
 	display: flex;
 	margin-bottom: 15px;
-    
 }
 
 .courses > *:first-child {
@@ -15,7 +39,6 @@
 .courses > * {
 	margin-right: 5px;
 	margin-left: 5px;
-    
 }
 
 .course-item-title {
@@ -53,8 +76,53 @@
 .hidden {
 	display: none;
 }
-span{
-    color: rgb(12, 211, 145);
+span {
+	color: rgb(65, 12, 211);
 }
 
+.yesterday {
+	color: rgb(117, 24, 224);
+}
 
+#USD,
+#EUR,
+#TRY,
+#GBP,
+#AUD,
+#AZN,
+#AMD,
+#JPY,
+#BYN,
+#BGN,
+#BRL,
+#HUF,
+#HKD,
+#DKK,
+#INR,
+#KZT,
+#CAD,
+#KGS,
+#CNY,
+#MDL,
+#NOK,
+#PLN,
+#RON,
+#XDR,
+#SGD,
+#TJS,
+#TMT,
+#UZS,
+#CZK,
+#UAH,
+#SEK,
+#CHF,
+#ZAR,
+#KRW {
+	background-color: rgb(240, 239, 196);
+	border: solid 4px;
+	color: rgb(18, 22, 15);
+	border-radius: 8px;
+}
+#main {
+	margin: auto;
+}

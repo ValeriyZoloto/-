@@ -26,18 +26,18 @@
 			}
 		</style>
 	</head>
-	<body>
-		<div class="container pt-5 pb-5">
+	<body id="body">
+		<div id="pt-5" class="container pt-5 pb-5">
 			<div class="row justify-content-center">
 				<div class="col-6">
 					<!-- Content -->
-					<div class="card p-3">
+					<div id="main" class="card p-3">
 						<form>
-							<h1 class="h2 mb-4">Конвертер валют</h1>
+							<h1 id="h1" class="h2 mb-4">Конвертер валют</h1>
 
 							<div class="row mb-1">
 								<div class="col">
-									<label for="name">Отдаю:</label>
+									<label id="label" for="name">Отдаю:</label>
 									<select
 										disabled
 										class="form-control"
@@ -47,7 +47,7 @@
 									</select>
 								</div>
 								<div class="col">
-									<label for="name">Получаю:</label>
+									<label id="label1" for="name">Получаю:</label>
 									<select
 										id="select"
 										class="form-control"
@@ -164,17 +164,19 @@
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="USD" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomUSD"></span> Доллар США USD
 									</div>
 									<div class="course-item-value" data-value="USD">
-										--.--
+										--.-- 
 									</div>
 									<div id="urroyUpUSD" class="urroyUp">↟</div>
 									<div id="urroyDownUSD" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesUSD"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="EUR" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomEUR"></span> Евро EURO
 									</div>
@@ -183,8 +185,10 @@
 									</div>
 									<div id="urroyUpEUR" class="urroyUp">↟</div>
 									<div id="urroyDownEUR" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesEUR"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="GBP" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomGBP"></span> Британский Фунт GBP
 									</div>
@@ -193,11 +197,13 @@
 									</div>
 									<div id="urroyUpGBP" class="urroyUp">↟</div>
 									<div id="urroyDownGBP" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesGBP"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="AUD" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomAUD"></span> Австралийский доллар AUD
 									</div>
@@ -206,8 +212,10 @@
 									</div>
 									<div id="urroyUpAUD" class="urroyUp">↟</div>
 									<div id="urroyDownAUD" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesAUD"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="AZN" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomAZN"></span> Азербайджанский манат
 										AZN
@@ -217,8 +225,10 @@
 									</div>
 									<div id="urroyUpAZN" class="urroyUp">↟</div>
 									<div id="urroyDownAZN" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesAZN"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="AMD" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomAMD"></span> Армянских драмов AMD
 									</div>
@@ -227,11 +237,13 @@
 									</div>
 									<div id="urroyUpAMD" class="urroyUp">↟</div>
 									<div id="urroyDownAMD" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesAMD"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="JPY" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomJPY"></span> Японских иен JPY
 									</div>
@@ -240,8 +252,10 @@
 									</div>
 									<div id="urroyUpJPY" class="urroyUp">↟</div>
 									<div id="urroyDownJPY" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesJPY"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="BYN" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomBYN"></span> Белорусский рубль BYN
 									</div>
@@ -250,8 +264,10 @@
 									</div>
 									<div id="urroyUpBYN" class="urroyUp">↟</div>
 									<div id="urroyDownBYN" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesBYN"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="BGN" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomBGN"></span> Болгарский лев BGN
 									</div>
@@ -260,11 +276,13 @@
 									</div>
 									<div id="urroyUpBGN" class="urroyUp">↟</div>
 									<div id="urroyDownBGN" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesBGN"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="BRL" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomBRL"></span> Бразильский реал BRL
 									</div>
@@ -273,8 +291,10 @@
 									</div>
 									<div id="urroyUpBRL" class="urroyUp">↟</div>
 									<div id="urroyDownBRL" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesBRL"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="HUF" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomHUF"></span> Венгерских форинтов HUF
 									</div>
@@ -283,8 +303,10 @@
 									</div>
 									<div id="urroyUpHUF" class="urroyUp">↟</div>
 									<div id="urroyDownHUF" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesHUF"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="HKD" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomHKD"></span> Гонконгских долларов HKD
 									</div>
@@ -293,21 +315,25 @@
 									</div>
 									<div id="urroyUpHKD" class="urroyUp">↟</div>
 									<div id="urroyDownHKD" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesHKD"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="DKK" class="course-item card card-body">
 									<div class="course-item-title">
-										<span id="nomDKK"></span> Датская крона DKK
+										<span id="nomDKK"></span> Датскую крону DKK
 									</div>
 									<div class="course-item-value" data-value="DKK">
 										--.--
 									</div>
 									<div id="urroyUpDKK" class="urroyUp">↟</div>
 									<div id="urroyDownDKK" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesDKK"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="INR" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomINR"></span> Индийских рупий INR
 									</div>
@@ -316,8 +342,10 @@
 									</div>
 									<div id="urroyUpINR" class="urroyUp">↟</div>
 									<div id="urroyDownINR" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesINR"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="KZT" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomKZT"></span> Казахстанских тенге KZT
 									</div>
@@ -326,11 +354,13 @@
 									</div>
 									<div id="urroyUpKZT" class="urroyUp">↟</div>
 									<div id="urroyDownKZT" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesKZT"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="CAD" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomCAD"></span> Канадский доллар CAD
 									</div>
@@ -339,8 +369,10 @@
 									</div>
 									<div id="urroyUpCAD" class="urroyUp">↟</div>
 									<div id="urroyDownCAD" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesCAD"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="KGS" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomKGS"></span> Киргизских сомов KGS
 									</div>
@@ -349,8 +381,10 @@
 									</div>
 									<div id="urroyUpKGS" class="urroyUp">↟</div>
 									<div id="urroyDownKGS" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesKGS"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="CNY" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomCNY"></span> Китайский юань CNY
 									</div>
@@ -359,11 +393,13 @@
 									</div>
 									<div id="urroyUpCNY" class="urroyUp">↟</div>
 									<div id="urroyDownCNY" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesCNY"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="MDL" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomMDL"></span> Молдавских леев MDL
 									</div>
@@ -372,8 +408,10 @@
 									</div>
 									<div id="urroyUpMDL" class="urroyUp">↟</div>
 									<div id="urroyDownMDL" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesMDL"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="NOK" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomNOK"></span> Норвежских крон NOK
 									</div>
@@ -382,8 +420,10 @@
 									</div>
 									<div id="urroyUpNOK" class="urroyUp">↟</div>
 									<div id="urroyDownNOK" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesNOK"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="PLN" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomPLN"></span> Польский злотый PLN
 									</div>
@@ -392,11 +432,13 @@
 									</div>
 									<div id="urroyUpPLN" class="urroyUp">↟</div>
 									<div id="urroyDownPLN" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesPLN"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="RON" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomRON"></span> Румынский лей RON
 									</div>
@@ -405,8 +447,10 @@
 									</div>
 									<div id="urroyUpRON" class="urroyUp">↟</div>
 									<div id="urroyDownRON" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesRON"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="XDR" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomXDR"></span> СДР (специальные права
 										заимствования) XDR
@@ -416,8 +460,10 @@
 									</div>
 									<div id="urroyUpXDR" class="urroyUp">↟</div>
 									<div id="urroyDownXDR" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesXDR"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="SGD" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomSGD"></span> Сингапурский доллар SGD
 									</div>
@@ -426,11 +472,13 @@
 									</div>
 									<div id="urroyUpSGD" class="urroyUp">↟</div>
 									<div id="urroyDownSGD" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesSGD"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="TJS" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomTJS"></span> Таджикских сомони TJS
 									</div>
@@ -439,18 +487,22 @@
 									</div>
 									<div id="urroyUpTJS" class="urroyUp">↟</div>
 									<div id="urroyDownTJS" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesTJS"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="TRY" class="course-item card card-body">
 									<div class="course-item-title">
-										<span id="nomTRY"></span> Турецкая лира TRY
+										<span id="nomTRY"></span> Турецкую лиру TRY
 									</div>
 									<div class="course-item-value" data-value="TRY">
 										--.--
 									</div>
 									<div id="urroyUpTRY" class="urroyUp">↟</div>
 									<div id="urroyDownTRY" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesTRY"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="TMT" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomTMT"></span> Новый туркменский манат
 										TMT
@@ -460,11 +512,13 @@
 									</div>
 									<div id="urroyUpTMT" class="urroyUp">↟</div>
 									<div id="urroyDownTMT" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesTMT"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="UZS" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomUZS"></span> Узбекских сумов UZS
 									</div>
@@ -473,8 +527,10 @@
 									</div>
 									<div id="urroyUpUZS" class="urroyUp">↟</div>
 									<div id="urroyDownUZS" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesUZS"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="CZK" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomCZK"></span> Чешских крон CZK
 									</div>
@@ -483,8 +539,10 @@
 									</div>
 									<div id="urroyUpCZK" class="urroyUp">↟</div>
 									<div id="urroyDownCZK" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesCZK"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="UAH" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomUAH"></span> Украинских гривен UAH
 									</div>
@@ -493,11 +551,13 @@
 									</div>
 									<div id="urroyUpUAH" class="urroyUp">↟</div>
 									<div id="urroyDownUAH" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesUAH"></span>
 								</div>
 							</div>
 
 							<div class="courses">
-								<div class="course-item card card-body">
+								<div id="SEK" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomSEK"></span> Шведских крон SEK
 									</div>
@@ -506,8 +566,10 @@
 									</div>
 									<div id="urroyUpSEK" class="urroyUp">↟</div>
 									<div id="urroyDownSEK" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesSEK"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="CHF" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomCHF"></span> Швейцарский франк CHF
 									</div>
@@ -516,8 +578,10 @@
 									</div>
 									<div id="urroyUpCHF" class="urroyUp">↟</div>
 									<div id="urroyDownCHF" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesCHF"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="ZAR" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomZAR"></span> Южноафриканских рэндов
 										ZAR
@@ -527,8 +591,10 @@
 									</div>
 									<div id="urroyUpZAR" class="urroyUp">↟</div>
 									<div id="urroyDownZAR" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesZAR"></span>
 								</div>
-								<div class="course-item card card-body">
+								<div id="KRW" class="course-item card card-body">
 									<div class="course-item-title">
 										<span id="nomKRW"></span> Вон Республики Корея KRW
 									</div>
@@ -537,6 +603,8 @@
 									</div>
 									<div id="urroyUpKRW" class="urroyUp">↟</div>
 									<div id="urroyDownKRW" class="urroyDown">↡</div>
+                                    <span class="yesterday">курс вчера</span>
+                                    <span id="yesKRW"></span>
 								</div>
 							</div>
 						</form>
